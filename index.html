@@ -3,10 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=1.0, shrink-to-fit=no">
+  <!-- FIX FOR GOOGLEBOT: Force light mode so Google can see content -->
+  <meta name="color-scheme" content="light">
   <title>NextGen IT | Global IT Services & Solutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    /* FORCE WHITE BACKGROUND FOR GOOGLEBOT */
+    body { 
+      background-color: #ffffff !important; 
+      color: #333333 !important; 
+    }
+    
     :root {
       --primary: #4e5df8;
       --secondary: #00c897;
@@ -813,6 +821,7 @@
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       border: 4px solid var(--white);
       outline: 1px solid #eef2ff;
+      background: #f0f4fe; /* Fallback background */
     }
 
     .image-wrapper-single img {
@@ -1252,7 +1261,7 @@
     <div class="section-header"><span>TRUSTED BY</span><h2>Our Clients</h2></div>
     <div class="clients-wrapper">
         <div class="client-card">
-            <div class="logo-box"><img src="Santoshelogo.png" alt="Client Logo" class="client-logo" onerror="this.src='https://placehold.co/400x200?text=KEES'"></div>
+            <div class="logo-box"><img src="Santoshelogo.png" alt="Client Logo" class="client-logo"></div>
             <h3>Kathmandu Electric & Electronics Service</h3>
             <p>Reliable Electrical & Electronics Solutions</p>
         </div>
@@ -1264,12 +1273,12 @@
     <div class="portfolio-grid">
         <div class="portfolio-card"><div class="media-box slideshow"><img class="slide-img active" src="brandidentity.png" alt="brand"><img class="slide-img" src="logoelectricalandelectronicsservices.png" alt="logo"><img class="slide-img" src="firstdesign.jpg" alt="design1"><img class="slide-img" src="seconddesign.png" alt="design2"><img class="slide-img" src="thirddesign.png" alt="design3"><img class="slide-img" src="fourthdesign.png" alt="design4"></div><div class="portfolio-info"><span class="portfolio-tag">Graphic Design</span><h3>Brand Identity System</h3><p>Modern logo and branding designed for strong business identity.</p></div></div>
         <div class="portfolio-card"><div class="media-box"><video muted loop playsinline><source src="NextGenIT promo video.mp4" type="video/mp4"></video></div><div class="portfolio-info"><span class="portfolio-tag">Video Production</span><h3>Advertising Promo Video</h3><p>High quality marketing video for social media campaigns.</p></div></div>
-        <div class="portfolio-card"><div class="media-box"><iframe src="https://tudusujit690-netizen.github.io/nextgenit.com/" title="website preview" loading="lazy"></iframe></div><div class="portfolio-info"><span class="portfolio-tag">Web Development</span><h3>Business Website</h3><p>Fully responsive and SEO optimized website preview.</p></div></div>
+        <div class="portfolio-card"><div class="media-box"><iframe src="https://nextgenit-global.github.io/" title="website preview" loading="lazy"></iframe></div><div class="portfolio-info"><span class="portfolio-tag">Web Development</span><h3>Business Website</h3><p>Fully responsive and SEO optimized website preview.</p></div></div>
         <div class="portfolio-card"><div class="media-box slideshow2"><img class="slide-img active" src="marketingcreativedesign.png" alt="creative"><img class="slide-img" src="marketingcreativedesign.png" alt="creative2"><img class="slide-img" src="marketingcreativedesign.png" alt="creative3"></div><div class="portfolio-info"><span class="portfolio-tag">Social Media</span><h3>Marketing Creatives</h3><p>Engaging posts designed for brand growth and conversion.</p></div></div>
     </div>
 </section>
 
-<!-- UPDATED TEAM SECTION - ALL 6 MEMBERS IN PROFESSIONAL GRID -->
+<!-- UPDATED TEAM SECTION - ALL 6 MEMBERS IN PROFESSIONAL GRID WITH VALID IMAGES -->
 <section id="team" class="section-padding" style="background: var(--light);">
     <div class="team-container">
         <h2 class="section-title">The Minds Behind <span>Digital Dominance</span></h2>
@@ -1278,7 +1287,7 @@
         <div class="team-all-members">
             <!-- Member 1: Sujit Tudu (Founder) -->
             <div class="team-card-single">
-                <div class="image-wrapper-single"><img src="sujit.jpg" alt="Sujit Tudu" onerror="this.src='https://placehold.co/400x400?text=Sujit+Tudu'"></div>
+                <div class="image-wrapper-single"><img src="sujit.jpg" alt="Sujit Tudu"></div>
                 <div class="info">
                     <h3>Sujit Tudu</h3>
                     <p class="role">🚀 Founder of NextGenIT</p>
@@ -1289,7 +1298,7 @@
 
             <!-- Member 2: Surendra Tudu -->
             <div class="team-card-single">
-                <div class="image-wrapper-single"><img src="surendra.jpg" alt="Surendra Tudu" onerror="this.src='https://placehold.co/400x400?text=Surendra+Tudu'"></div>
+                <div class="image-wrapper-single"><img src="surendra.jpg" alt="Surendra Tudu"></div>
                 <div class="info">
                     <h3>Surendra Tudu</h3>
                     <p class="role">🎨 Graphic Designer</p>
@@ -1300,7 +1309,7 @@
 
             <!-- Member 3: Anurag Bishwokarma -->
             <div class="team-card-single">
-                <div class="image-wrapper-single"><img src="anurag.jpg" alt="Anurag Bishwokarma" onerror="this.src='https://placehold.co/400x400?text=Anurag+B.'"></div>
+                <div class="image-wrapper-single"><img src="anurag.jpg" alt="Anurag Bishwokarma"></div>
                 <div class="info">
                     <h3>Anurag Bishwokarma</h3>
                     <p class="role">⚡ SEO Expert + Full Stack Developer</p>
@@ -1311,7 +1320,7 @@
 
             <!-- Member 4: Ram Hasda -->
             <div class="team-card-single">
-                <div class="image-wrapper-single"><img src="ramhasda.jpg" alt="Ram Hasda" onerror="this.src='https://placehold.co/400x400?text=Ram+Hasda'"></div>
+                <div class="image-wrapper-single"><img src="ramhasda.jpg" alt="Ram Hasda"></div>
                 <div class="info">
                     <h3>Ram Hasda</h3>
                     <p class="role">🖌️ Graphic Designer</p>
@@ -1322,7 +1331,7 @@
 
             <!-- Member 5: Rajesh Tudu -->
             <div class="team-card-single">
-                <div class="image-wrapper-single"><img src="rajeshtudu.jpg" alt="Rajesh Tudu" onerror="this.src='https://placehold.co/400x400?text=Rajesh+Tudu'"></div>
+                <div class="image-wrapper-single"><img src="rajeshtudu.jpg" alt="Rajesh Tudu"></div>
                 <div class="info">
                     <h3>Rajesh Tudu</h3>
                     <p class="role">📈 SEO Expert + Full Stack Developer</p>
@@ -1333,7 +1342,7 @@
 
             <!-- Member 6: Ashok Raut -->
             <div class="team-card-single">
-                <div class="image-wrapper-single"><img src="ashokraut.jpg" alt="Ashok Raut" onerror="this.src='https://placehold.co/400x400?text=Ashok+Raut'"></div>
+                <div class="image-wrapper-single"><img src="ashokraut.jpg" alt="Ashok Raut"></div>
                 <div class="info">
                     <h3>Ashok Raut</h3>
                     <p class="role">🎬 Senior Graphic Designer + Video Editor + Creator</p>
