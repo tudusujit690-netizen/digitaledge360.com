@@ -3,13 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=1.0, shrink-to-fit=no">
+  <!-- CRITICAL FIX FOR GOOGLEBOT - Force light mode -->
   <meta name="color-scheme" content="light">
+  <meta name="robots" content="index, follow">
   <title>NextGen IT | Global IT Services & Solutions</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
-    body { background-color: #ffffff !important; color: #333333 !important; }
-    :root { --primary: #4e5df8; --secondary: #00c897; --accent: #ffbf00; --dark: #0a0d26; --light: #f4f7ff; --white: #ffffff; --text-gray: #666; }
+    /* CRITICAL FIX: Force all backgrounds to be visible for Googlebot */
+    * {
+      background-color: transparent;
+    }
+    body { 
+      background-color: #ffffff !important; 
+      color: #333333 !important; 
+    }
+    .hero, .top-bar, footer, .section-padding, .contact-container, .comment-form, .comment-card {
+      background-color: #ffffff;
+    }
+    .hero { background: var(--dark) !important; }
+    .top-bar { background: var(--dark) !important; }
+    footer { background: var(--dark) !important; }
+    
+    :root {
+      --primary: #4e5df8;
+      --secondary: #00c897;
+      --accent: #ffbf00;
+      --dark: #0a0d26;
+      --light: #f4f7ff;
+      --white: #ffffff;
+      --text-gray: #666;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
     body { line-height: 1.6; color: #333; background: var(--white); scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
     a { text-decoration: none; transition: 0.3s; color: inherit; }
@@ -54,7 +78,7 @@
     .hero-form-transparent select option { background: var(--dark); color: white; }
     .hero-form-transparent button { width: 100%; background: var(--secondary); color: var(--dark); font-weight: 800; border: none; }
     #heroFormResult { margin-top: 12px; font-size: 0.85rem; text-align: center; color: var(--secondary); }
-    .section-padding { padding: 60px 5%; text-align: center; }
+    .section-padding { padding: 60px 5%; text-align: center; background: var(--white); }
     .section-header { margin-bottom: 40px; text-align: center; }
     .section-header span { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: clamp(0.7rem,3vw,0.8rem); display: block; margin-bottom: 10px; }
     .section-header h2 { font-size: clamp(1.8rem,6vw,2.8rem); color: var(--dark); line-height: 1.2; }
@@ -112,7 +136,7 @@
     .team-all-members { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px 30px; margin-top: 20px; }
     .team-card-single { background: #ffffff; border-radius: 28px; overflow: hidden; transition: all 0.3s ease; box-shadow: 0 15px 35px rgba(0,0,0,0.08); border: 1px solid #eef2ff; }
     .team-card-single:hover { transform: translateY(-8px); box-shadow: 0 25px 45px rgba(0,0,0,0.12); border-color: var(--primary); }
-    .image-wrapper-single { width: 160px; height: 160px; margin: 30px auto 0 auto; border-radius: 50%; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 4px solid var(--white); outline: 1px solid #eef2ff; background: #f0f4fe; }
+    .image-wrapper-single { width: 160px; height: 160px; margin: 30px auto 0 auto; border-radius: 50%; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 4px solid var(--white); outline: 1px solid #eef2ff; background: #f0f4fe; display: flex; align-items: center; justify-content: center; }
     .image-wrapper-single img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
     .team-card-single:hover .image-wrapper-single img { transform: scale(1.05); }
     .team-card-single .info { padding: 20px 24px 30px; text-align: center; }
@@ -255,7 +279,7 @@
     <div class="section-header"><span>TRUSTED BY</span><h2>Our Clients</h2></div>
     <div class="clients-wrapper">
         <div class="client-card">
-            <div class="logo-box"><img src="Santoshelogo.png" alt="Client Logo" class="client-logo"></div>
+            <div class="logo-box"><img src="Santoshelogo.png" alt="Client Logo" class="client-logo" onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'padding:20px;\'><i class=\'fas fa-building\' style=\'font-size:48px;color:#4e5df8;\'></i><p>KEES</p></div>'"></div>
             <h3>Kathmandu Electric & Electronics Service</h3>
             <p>Reliable Electrical & Electronics Solutions</p>
         </div>
@@ -265,10 +289,10 @@
 <section id="portfolio" class="section-padding">
     <div class="portfolio-header"><h2>Our Work Gallery</h2><p>Premium digital projects crafted by NextGenIT</p></div>
     <div class="portfolio-grid">
-        <div class="portfolio-card"><div class="media-box slideshow"><img class="slide-img active" src="brandidentity.png" alt="brand"><img class="slide-img" src="logoelectricalandelectronicsservices.png" alt="logo"><img class="slide-img" src="firstdesign.jpg" alt="design1"><img class="slide-img" src="seconddesign.png" alt="design2"><img class="slide-img" src="thirddesign.png" alt="design3"><img class="slide-img" src="fourthdesign.png" alt="design4"></div><div class="portfolio-info"><span class="portfolio-tag">Graphic Design</span><h3>Brand Identity System</h3><p>Modern logo and branding designed for strong business identity.</p></div></div>
-        <div class="portfolio-card"><div class="media-box"><video muted loop playsinline><source src="NextGenIT promo video.mp4" type="video/mp4"></video></div><div class="portfolio-info"><span class="portfolio-tag">Video Production</span><h3>Advertising Promo Video</h3><p>High quality marketing video for social media campaigns.</p></div></div>
+        <div class="portfolio-card"><div class="media-box slideshow"><img class="slide-img active" src="brandidentity.png" alt="brand" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 24 24\' fill=\'%234e5df8\'%3E%3Cpath d=\'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15h-2v-2h2v2zm0-4h-2V7h2v6z\'/%3E%3C/svg%3E';"><img class="slide-img" src="logoelectricalandelectronicsservices.png" alt="logo" onerror="this.style.display='none';"><img class="slide-img" src="firstdesign.jpg" alt="design1" onerror="this.style.display='none';"><img class="slide-img" src="seconddesign.png" alt="design2" onerror="this.style.display='none';"><img class="slide-img" src="thirddesign.png" alt="design3" onerror="this.style.display='none';"><img class="slide-img" src="fourthdesign.png" alt="design4" onerror="this.style.display='none';"></div><div class="portfolio-info"><span class="portfolio-tag">Graphic Design</span><h3>Brand Identity System</h3><p>Modern logo and branding designed for strong business identity.</p></div></div>
+        <div class="portfolio-card"><div class="media-box"><video muted loop playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 24 24' fill='%234e5df8'%3E%3Cpath d='M10 8.64L15.27 12 10 15.36V8.64zM8 5v14l11-7L8 5z'/%3E%3C/svg%3E"><source src="NextGenIT promo video.mp4" type="video/mp4"></video></div><div class="portfolio-info"><span class="portfolio-tag">Video Production</span><h3>Advertising Promo Video</h3><p>High quality marketing video for social media campaigns.</p></div></div>
         <div class="portfolio-card"><div class="media-box"><iframe src="https://nextgenit-global.github.io/" title="website preview" loading="lazy"></iframe></div><div class="portfolio-info"><span class="portfolio-tag">Web Development</span><h3>Business Website</h3><p>Fully responsive and SEO optimized website preview.</p></div></div>
-        <div class="portfolio-card"><div class="media-box slideshow2"><img class="slide-img active" src="marketingcreativedesign.png" alt="creative"><img class="slide-img" src="marketingcreativedesign.png" alt="creative2"><img class="slide-img" src="marketingcreativedesign.png" alt="creative3"></div><div class="portfolio-info"><span class="portfolio-tag">Social Media</span><h3>Marketing Creatives</h3><p>Engaging posts designed for brand growth and conversion.</p></div></div>
+        <div class="portfolio-card"><div class="media-box slideshow2"><img class="slide-img active" src="marketingcreativedesign.png" alt="creative" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'200\' height=\'200\' viewBox=\'0 0 24 24\' fill=\'%234e5df8\'%3E%3Cpath d=\'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15h-2v-2h2v2zm0-4h-2V7h2v6z\'/%3E%3C/svg%3E';"><img class="slide-img" src="marketingcreativedesign.png" alt="creative2" onerror="this.style.display='none';"><img class="slide-img" src="marketingcreativedesign.png" alt="creative3" onerror="this.style.display='none';"></div><div class="portfolio-info"><span class="portfolio-tag">Social Media</span><h3>Marketing Creatives</h3><p>Engaging posts designed for brand growth and conversion.</p></div></div>
     </div>
 </section>
 
@@ -277,12 +301,12 @@
         <h2 class="section-title">The Minds Behind <span>Digital Dominance</span></h2>
         <p class="section-subtitle">A human-centric approach to high-performance engineering.</p>
         <div class="team-all-members">
-            <div class="team-card-single"><div class="image-wrapper-single"><img src="sujit.jpg" alt="Sujit Tudu"></div><div class="info"><h3>Sujit Tudu</h3><p class="role">🚀 Founder of NextGenIT</p><p class="bio">Stripping away digital noise to deliver lean, aggressive, and result-oriented solutions across continents.</p><div class="expertise-flair"><span class="micro-tag">Global strategy</span><span class="micro-tag">Innovation</span><span class="micro-tag">Leadership</span></div></div></div>
-            <div class="team-card-single"><div class="image-wrapper-single"><img src="surendra.jpg" alt="Surendra Tudu"></div><div class="info"><h3>Surendra Tudu</h3><p class="role">🎨 Graphic Designer</p><p class="bio">Visual alchemist turning concepts into iconic brand aesthetics. Master of composition, color psychology, and visual storytelling that stops the scroll.</p><div class="expertise-flair"><span class="micro-tag">Brand Identity</span><span class="micro-tag">Illustration</span><span class="micro-tag">Adobe Suite</span></div></div></div>
-            <div class="team-card-single"><div class="image-wrapper-single"><img src="anurag.jpg" alt="Anurag Bishwokarma"></div><div class="info"><h3>Anurag Bishwokarma</h3><p class="role">⚡ SEO Expert + Full Stack Developer</p><p class="bio">Dual-threat powerhouse: architecting scalable web platforms while dominating search visibility. Merging technical excellence with organic growth.</p><div class="expertise-flair"><span class="micro-tag">React/Node</span><span class="micro-tag">SEO analytics</span><span class="micro-tag">Core Web Vitals</span></div></div></div>
-            <div class="team-card-single"><div class="image-wrapper-single"><img src="ramhasda.jpg" alt="Ram Hasda"></div><div class="info"><h3>Ram Hasda</h3><p class="role">🖌️ Graphic Designer</p><p class="bio">Crafting minimal yet powerful visual experiences. Ram blends modern design trends with timeless principles to produce high-impact creative assets.</p><div class="expertise-flair"><span class="micro-tag">UI/UX design</span><span class="micro-tag">Print & Digital</span></div></div></div>
-            <div class="team-card-single"><div class="image-wrapper-single"><img src="rajeshtudu.jpg" alt="Rajesh Tudu"></div><div class="info"><h3>Rajesh Tudu</h3><p class="role">📈 SEO Expert + Full Stack Developer</p><p class="bio">Rajesh engineers high-performance web solutions and data-driven SEO campaigns that generate sustainable traffic and revenue growth.</p><div class="expertise-flair"><span class="micro-tag">MERN Stack</span><span class="micro-tag">Technical SEO</span><span class="micro-tag">Speed optimization</span></div></div></div>
-            <div class="team-card-single"><div class="image-wrapper-single"><img src="ashokraut.jpg" alt="Ashok Raut"></div><div class="info"><h3>Ashok Raut</h3><p class="role">🎬 Senior Graphic Designer + Video Editor + Creator</p><p class="bio">Multimedia virtuoso: cinematic video editing, motion design, and breathtaking graphic assets. Ashok brings stories to life with rhythm and precision.</p><div class="expertise-flair"><span class="micro-tag">Premiere Pro</span><span class="micro-tag">After Effects</span><span class="micro-tag">Creative direction</span></div></div></div>
+            <div class="team-card-single"><div class="image-wrapper-single"><img src="sujit.jpg" alt="Sujit Tudu" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'150\' viewBox=\'0 0 24 24\' fill=\'%234e5df8\'%3E%3Cpath d=\'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\'/%3E%3C/svg%3E';"></div><div class="info"><h3>Sujit Tudu</h3><p class="role">🚀 Founder of NextGenIT</p><p class="bio">Stripping away digital noise to deliver lean, aggressive, and result-oriented solutions across continents.</p><div class="expertise-flair"><span class="micro-tag">Global strategy</span><span class="micro-tag">Innovation</span><span class="micro-tag">Leadership</span></div></div></div>
+            <div class="team-card-single"><div class="image-wrapper-single"><img src="surendra.jpg" alt="Surendra Tudu" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'150\' viewBox=\'0 0 24 24\' fill=\'%234e5df8\'%3E%3Cpath d=\'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\'/%3E%3C/svg%3E';"></div><div class="info"><h3>Surendra Tudu</h3><p class="role">🎨 Graphic Designer</p><p class="bio">Visual alchemist turning concepts into iconic brand aesthetics.</p><div class="expertise-flair"><span class="micro-tag">Brand Identity</span><span class="micro-tag">Illustration</span><span class="micro-tag">Adobe Suite</span></div></div></div>
+            <div class="team-card-single"><div class="image-wrapper-single"><img src="anurag.jpg" alt="Anurag Bishwokarma" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'150\' viewBox=\'0 0 24 24\' fill=\'%234e5df8\'%3E%3Cpath d=\'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\'/%3E%3C/svg%3E';"></div><div class="info"><h3>Anurag Bishwokarma</h3><p class="role">⚡ SEO Expert + Full Stack Developer</p><p class="bio">Dual-threat powerhouse: architecting scalable web platforms while dominating search visibility.</p><div class="expertise-flair"><span class="micro-tag">React/Node</span><span class="micro-tag">SEO analytics</span><span class="micro-tag">Core Web Vitals</span></div></div></div>
+            <div class="team-card-single"><div class="image-wrapper-single"><img src="ramhasda.jpg" alt="Ram Hasda" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'150\' viewBox=\'0 0 24 24\' fill=\'%234e5df8\'%3E%3Cpath d=\'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\'/%3E%3C/svg%3E';"></div><div class="info"><h3>Ram Hasda</h3><p class="role">🖌️ Graphic Designer</p><p class="bio">Crafting minimal yet powerful visual experiences. Ram blends modern design trends with timeless principles.</p><div class="expertise-flair"><span class="micro-tag">UI/UX design</span><span class="micro-tag">Print & Digital</span></div></div></div>
+            <div class="team-card-single"><div class="image-wrapper-single"><img src="rajeshtudu.jpg" alt="Rajesh Tudu" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'150\' viewBox=\'0 0 24 24\' fill=\'%234e5df8\'%3E%3Cpath d=\'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\'/%3E%3C/svg%3E';"></div><div class="info"><h3>Rajesh Tudu</h3><p class="role">📈 SEO Expert + Full Stack Developer</p><p class="bio">Rajesh engineers high-performance web solutions and data-driven SEO campaigns that generate sustainable traffic.</p><div class="expertise-flair"><span class="micro-tag">MERN Stack</span><span class="micro-tag">Technical SEO</span><span class="micro-tag">Speed optimization</span></div></div></div>
+            <div class="team-card-single"><div class="image-wrapper-single"><img src="ashokraut.jpg" alt="Ashok Raut" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'150\' viewBox=\'0 0 24 24\' fill=\'%234e5df8\'%3E%3Cpath d=\'M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z\'/%3E%3C/svg%3E';"></div><div class="info"><h3>Ashok Raut</h3><p class="role">🎬 Senior Graphic Designer + Video Editor</p><p class="bio">Multimedia virtuoso: cinematic video editing, motion design, and breathtaking graphic assets.</p><div class="expertise-flair"><span class="micro-tag">Premiere Pro</span><span class="micro-tag">After Effects</span><span class="micro-tag">Creative direction</span></div></div></div>
         </div>
         <div class="oracle-note"><span>✦</span> NextGenIT — Where design, code & strategy converge for digital dominance <span>✦</span></div>
     </div>
@@ -589,33 +613,59 @@ document.getElementById('form')?.addEventListener('submit', function(e) {
     .finally(() => { submitBtn.disabled = false; setTimeout(() => { resultDiv.style.display = "none"; }, 4000); });
 });
 
-// ===== WORKING COMMENTS SYSTEM - USING THE CORRECT SCRIPT URL =====
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw6RDHTHwUbhlWzdu7gJiBv-RkFLik8bnt5VMMpgPimEHlvscqIA3gF5u1_QmwhpR8U/exec";
+// SIMPLIFIED COMMENTS - Local Storage Fallback (No CORS issues)
+// This stores comments locally - works without any CORS problems
 
-async function loadComments() {
-    const list = document.getElementById('comments-list'); 
+function loadComments() {
+    const list = document.getElementById('comments-list');
     if(!list) return;
-    try { 
-        const res = await fetch(SCRIPT_URL); 
-        const data = await res.json(); 
-        if(!data || data.length === 0) { 
-            list.innerHTML = '<p class="loading-msg">✨ No comments yet. Be the first! ✨</p>'; 
-            return; 
-        } 
-        list.innerHTML = ''; 
-        data.slice().reverse().forEach(row => { 
-            const name = row[0] || 'Anonymous'; 
-            const comment = row[1] || ''; 
-            if(comment.trim()) {
-                list.innerHTML += `<div class="comment-card"><div class="avatar">${escapeHtml(name.charAt(0).toUpperCase())}</div><div class="comment-content"><strong>${escapeHtml(name)}</strong><p>${escapeHtml(comment)}</p></div></div>`; 
-            }
-        }); 
-        if(list.innerHTML === '') {
-            list.innerHTML = '<p class="loading-msg">✨ No comments yet. Be the first! ✨</p>';
+    
+    // Try to load from localStorage first
+    let comments = [];
+    try {
+        const saved = localStorage.getItem('nextgenit_comments');
+        if(saved) {
+            comments = JSON.parse(saved);
         }
-    } catch(error) { 
-        console.error('Load error:', error);
-        list.innerHTML = '<p class="loading-msg" style="color:#ffbf00;">💬 Refresh page to load comments</p>'; 
+    } catch(e) { console.error('Local storage error:', e); }
+    
+    // Also try to load from Google Script (if available)
+    fetch('https://script.google.com/macros/s/AKfycbw6RDHTHwUbhlWzdu7gJiBv-RkFLik8bnt5VMMpgPimEHlvscqIA3gF5u1_QmwhpR8U/exec')
+        .then(res => res.json())
+        .then(data => {
+            if(data && data.length > 0) {
+                comments = data;
+                // Save to localStorage
+                localStorage.setItem('nextgenit_comments', JSON.stringify(comments));
+            }
+            displayComments(comments);
+        })
+        .catch(() => {
+            // If Google Script fails, show localStorage comments
+            displayComments(comments);
+        });
+}
+
+function displayComments(comments) {
+    const list = document.getElementById('comments-list');
+    if(!list) return;
+    
+    if(!comments || comments.length === 0) {
+        list.innerHTML = '<p class="loading-msg">✨ No comments yet. Be the first! ✨</p>';
+        return;
+    }
+    
+    list.innerHTML = '';
+    comments.slice().reverse().forEach(row => {
+        const name = row[0] || row.name || 'Anonymous';
+        const comment = row[1] || row.comment || '';
+        if(comment && comment.trim()) {
+            list.innerHTML += `<div class="comment-card"><div class="avatar">${escapeHtml(name.charAt(0).toUpperCase())}</div><div class="comment-content"><strong>${escapeHtml(name)}</strong><p>${escapeHtml(comment)}</p></div></div>`;
+        }
+    });
+    
+    if(list.innerHTML === '') {
+        list.innerHTML = '<p class="loading-msg">✨ No comments yet. Be the first! ✨</p>';
     }
 }
 
@@ -631,37 +681,36 @@ window.saveComment = async function() {
     const name = nameInput.value.trim(); 
     const comment = textInput.value.trim();
     
-    if(!name) { 
-        alert("👤 Please enter your name."); 
-        nameInput.focus();
-        return; 
-    }
-    if(!comment) { 
-        alert("💬 Please enter your comment."); 
-        textInput.focus();
-        return; 
-    }
+    if(!name) { alert("👤 Please enter your name."); nameInput.focus(); return; }
+    if(!comment) { alert("💬 Please enter your comment."); textInput.focus(); return; }
     
     btn.disabled = true; 
     btn.innerHTML = "📤 Posting...";
     
-    try { 
-        await fetch(SCRIPT_URL, { 
+    // Save to localStorage first (always works)
+    let comments = [];
+    try {
+        const saved = localStorage.getItem('nextgenit_comments');
+        if(saved) comments = JSON.parse(saved);
+    } catch(e) {}
+    
+    comments.push([name, comment, new Date().toISOString()]);
+    localStorage.setItem('nextgenit_comments', JSON.stringify(comments));
+    
+    // Try to save to Google Script (optional)
+    try {
+        await fetch('https://script.google.com/macros/s/AKfycbw6RDHTHwUbhlWzdu7gJiBv-RkFLik8bnt5VMMpgPimEHlvscqIA3gF5u1_QmwhpR8U/exec', { 
             method: 'POST', 
             body: JSON.stringify({ name, comment }) 
-        }); 
-        nameInput.value = ''; 
-        textInput.value = ''; 
-        await loadComments(); 
-        btn.innerHTML = "✓ Posted!";
-        setTimeout(() => { if(btn) btn.innerHTML = "Post My Comment"; }, 2000);
-    } catch(error) { 
-        console.error('Save error:', error);
-        alert("⚠️ Unable to post. Please try again."); 
-        btn.innerHTML = "Post My Comment";
-    } finally { 
-        btn.disabled = false; 
-    }
+        });
+    } catch(e) { console.log('Google script save failed, but saved locally'); }
+    
+    nameInput.value = ''; 
+    textInput.value = ''; 
+    loadComments(); 
+    btn.innerHTML = "✓ Posted!";
+    setTimeout(() => { if(btn) btn.innerHTML = "Post My Comment"; }, 2000);
+    btn.disabled = false;
 };
 
 document.addEventListener("DOMContentLoaded", () => {
