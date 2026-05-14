@@ -377,55 +377,105 @@
             color: var(--primary-blue);
             font-size: 16px;
         }
+        
+        /* ---------- MODERN CURVE SLIDER (REPLACES OLD RIGHT SIDE) ---------- */
         .hero-right {
             flex: 0.9;
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
+            max-width: 550px;
         }
-        .image-box {
+
+        .slider-container {
+            width: 100%;
+            height: 480px;
             position: relative;
-            width: 350px;
-            height: 350px;
+            overflow: hidden;
+            /* Modern Organic Curve */
+            clip-path: perspective(1000px) rotateY(-5deg);
+            border-radius: 60px 20px 100px 20px;
+            box-shadow: 20px 40px 60px rgba(15, 23, 42, 0.15);
+            background: #0f172a;
+            transition: all 0.5s ease;
+        }
+
+        .slider-container:hover {
+            clip-path: perspective(1000px) rotateY(0deg);
+            transform: scale(1.02);
+        }
+
+        .slider-track {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 400%;
+            height: 100%;
+            animation: modernSlide 16s infinite cubic-bezier(0.8, 0, 0.2, 1);
         }
-        .image-box img {
-            width: 80%;
-            z-index: 2;
+
+        .slide {
+            width: 25%;
+            height: 100%;
             position: relative;
-            animation: float 5s ease-in-out infinite;
         }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.85);
         }
-        .floating-circle {
+
+        /* Glass Info Overlay */
+        .slide-info {
             position: absolute;
-            border-radius: 50%;
-            opacity: 0.15;
+            bottom: 25px;
+            left: 25px;
+            right: 25px;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            color: white;
+            z-index: 5;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
         }
-        .c1 {
-            width: 150px;
-            height: 150px;
-            background: var(--primary-blue);
-            top: 0;
-            left: 0;
+
+        .slide-info h3 { 
+            font-size: 1.1rem; 
+            margin: 0 0 4px 0;
+            font-weight: 700;
         }
-        .c2 {
-            width: 110px;
-            height: 110px;
-            background: var(--navy-dark);
-            bottom: 10px;
-            right: 0;
+
+        .slide-info p { 
+            margin: 0;
+            opacity: 0.7; 
+            font-size: 0.75rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
         }
-        .c3 {
-            width: 80px;
-            height: 80px;
-            background: var(--primary-dark);
-            top: 60%;
-            left: -10px;
+
+        /* Subtle Background Glow */
+        .glow-effect {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(79,112,255,0.15) 0%, transparent 70%);
+            top: -10%;
+            left: -10%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @keyframes modernSlide {
+            0%, 20% { transform: translateX(0); }
+            25%, 45% { transform: translateX(-25%); }
+            50%, 70% { transform: translateX(-50%); }
+            75%, 95% { transform: translateX(-75%); }
+            100% { transform: translateX(0); }
         }
 
         /* ---------- FOOTER ---------- */
@@ -589,12 +639,13 @@
             color: #fff;
         }
 
-        /* ---------- RESPONSIVE ---------- */
+        /* ---------- RESPONSIVE (UPDATED FOR SLIDER) ---------- */
         @media(max-width:1024px) {
             .hero h1 { font-size: 38px; }
             .navbar { width: 92%; border-radius: 30px; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
             .footer-col-brand { grid-column: span 2; }
+            .slider-container { height: 420px; }
         }
         @media(max-width:900px) {
             .header {
@@ -630,12 +681,21 @@
                 display: block;
             }
             .hero {
-                flex-direction: column-reverse;
+                flex-direction: column;
                 text-align: center;
                 padding: 50px 6%;
             }
             .hero-left {
                 align-items: center;
+            }
+            .hero-right {
+                max-width: 100%;
+                margin-top: 20px;
+            }
+            .slider-container { 
+                height: 400px; 
+                clip-path: none; 
+                border-radius: 30px; 
             }
         }
         @media(max-width:550px) {
@@ -649,7 +709,7 @@
                 gap: 15px;
             }
             .hero h1 { font-size: 32px; }
-            .image-box { width: 280px; height: 280px; }
+            .slider-container { height: 320px; }
             .footer-grid { grid-template-columns: 1fr; }
             .footer-col-brand { grid-column: span 1; }
             .bottom-bar { justify-content: center; text-align: center; }
@@ -708,7 +768,7 @@
         </ul>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION - OLD FLOATING IMAGE REPLACED WITH MODERN CURVE SLIDER -->
     <section class="hero">
         <div class="hero-left">
             <p class="tagline">Web • SEO • Digital Marketing • Growth</p>
@@ -729,12 +789,45 @@
                 <div><i class="fa-solid fa-circle-check"></i> Websites Designed for Performance & Conversions</div>
             </div>
         </div>
+        
+        <!-- Modern Curve Slider (replaces old .image-box with floating circles) -->
         <div class="hero-right">
-            <div class="image-box">
-                <div class="floating-circle c1"></div>
-                <div class="floating-circle c2"></div>
-                <div class="floating-circle c3"></div>
-                <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Digital growth illustration">
+            <div class="glow-effect"></div>
+            <div class="slider-container">
+                <div class="slider-track">
+                    <!-- Slide 1: UI/UX -->
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="UI Design">
+                        <div class="slide-info">
+                            <h3>Digital Identity</h3>
+                            <p>Design Systems</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2: Full-Stack -->
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&w=800&q=80" alt="Full Stack">
+                        <div class="slide-info">
+                            <h3>Full-Stack Dev</h3>
+                            <p>Scale Ready</p>
+                        </div>
+                    </div>
+                    <!-- Slide 3: SEO Growth -->
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=800&q=80" alt="SEO">
+                        <div class="slide-info">
+                            <h3>Search Growth</h3>
+                            <p>SEO Strategy</p>
+                        </div>
+                    </div>
+                    <!-- Slide 4: Mobile UX -->
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80" alt="Mobile UX">
+                        <div class="slide-info">
+                            <h3>Mobile First</h3>
+                            <p>Responsive UX</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -779,7 +872,7 @@
                 </ul>
             </div>
 
-            <!-- WORKING NEWSLETTER with EmailJS - FIXED! -->
+            <!-- WORKING NEWSLETTER with EmailJS -->
             <div class="footer-col">
                 <h3>Newsletter</h3>
                 <div class="newsletter-box">
@@ -839,16 +932,14 @@
         });
     </script>
 
-    <!-- EMAILJS INTEGRATION - NOW FULLY WORKING! -->
+    <!-- EMAILJS INTEGRATION - FULLY WORKING -->
     <script>
-        // ✅ YOUR CORRECT EMAILJS CREDENTIALS
         const EMAILJS_CONFIG = {
             PUBLIC_KEY: "k0-JMxq9DMByW7fzf",
             SERVICE_ID: "service_sgnt3z9",  
             TEMPLATE_ID: "template_566697h"
         };
         
-        // Initialize EmailJS with your public key
         emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
         
         const form = document.getElementById('newsletterForm');
@@ -880,7 +971,6 @@
             }, 5000);
         }
         
-        // ✅ THIS IS THE FIXED WORKING CODE - EMAIL SENDING IS NOW ACTIVE!
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
             hideMessages();
@@ -901,7 +991,6 @@
             submitBtn.textContent = 'Subscribing...';
             
             try {
-                // ✅ EMAIL SENDING CODE IS NOW UNCOMMENTED AND WORKING!
                 const templateParams = {
                     to_email: 'nextgenit2030@gmail.com',
                     from_email: email,
@@ -911,14 +1000,12 @@
                     name: email.split('@')[0]
                 };
                 
-                // Send the email using EmailJS
-                const response = await emailjs.send(
+                await emailjs.send(
                     EMAILJS_CONFIG.SERVICE_ID,
                     EMAILJS_CONFIG.TEMPLATE_ID,
                     templateParams
                 );
                 
-                console.log('Email sent successfully!', response);
                 showSuccess(`Thanks ${email}! You're now subscribed to NextGenIT newsletter.`);
                 emailInput.value = '';
                 
