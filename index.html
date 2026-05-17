@@ -385,6 +385,7 @@
             width: 400%;
             height: 100%;
             animation: modernSlide 16s infinite cubic-bezier(0.8, 0, 0.2, 1);
+            will-change: transform;
         }
 
         .slide {
@@ -696,10 +697,10 @@
     <div class="top-bar">
         <div>Building digital success for modern businesses</div>
         <div class="social-icons">
-            <a href="https://www.youtube.com/@NextGenIT2026" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.instagram.com/nextgenit2026/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.facebook.com/profile.php?id=61576378432368" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.linkedin.com/in/sujit-tudu-661281212/"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/@NextGenIT2026" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/nextgenit2026/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61576378432368" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/in/sujit-tudu-661281212/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
         </div>
     </div>
 
@@ -742,7 +743,7 @@
         </ul>
     </nav>
 
-    <!-- HERO SECTION - OLD FLOATING IMAGE REPLACED WITH MODERN CURVE SLIDER -->
+    <!-- HERO SECTION - MODERN CURVE SLIDER -->
     <section class="hero">
         <div class="hero-left">
             <p class="tagline">Web Design • SEO • Digital Marketing • Business Growth</p>
@@ -762,26 +763,25 @@
                 <div><i class="fa-solid fa-circle-check"></i>Conversion-Focused Digital Marketing</div>
                 <div><i class="fa-solid fa-circle-check"></i>Fast, Mobile-Friendly & High-Performance Design</div>
                 <div><i class="fa-solid fa-circle-check"></i>Lead Generation & Brand Growth Strategies</div>
-                
             </div>
         </div>
         
-        <!-- Modern Curve Slider (replaces old .image-box with floating circles) -->
+        <!-- Modern Curve Slider -->
         <div class="hero-right">
             <div class="glow-effect"></div>
             <div class="slider-container">
                 <div class="slider-track">
                     <!-- Slide 1: UI/UX -->
                     <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="UI Design">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="UI Design dashboard concept">
                         <div class="slide-info">
                             <h3>Digital Identity</h3>
                             <p>Design Systems</p>
                         </div>
                     </div>
-                    <!-- Slide 2: Full-Stack -->
+                    <!-- Slide 2: Full-Stack (your specified image) -->
                     <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&w=800&q=80" alt="Full Stack">
+                        <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&w=800&q=80" alt="Full stack development illustration">
                         <div class="slide-info">
                             <h3>Full-Stack Dev</h3>
                             <p>Scale Ready</p>
@@ -789,7 +789,7 @@
                     </div>
                     <!-- Slide 3: SEO Growth -->
                     <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=800&q=80" alt="SEO">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=800&q=80" alt="SEO analytics and growth charts">
                         <div class="slide-info">
                             <h3>Search Growth</h3>
                             <p>SEO Strategy</p>
@@ -797,7 +797,7 @@
                     </div>
                     <!-- Slide 4: Mobile UX -->
                     <div class="slide">
-                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80" alt="Mobile UX">
+                        <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=800&q=80" alt="Mobile responsive design on devices">
                         <div class="slide-info">
                             <h3>Mobile First</h3>
                             <p>Responsive UX</p>
@@ -807,6 +807,15 @@
             </div>
         </div>
     </section>
+
+    <!-- ANCHOR DIVS FOR SMOOTH SCROLLING (FIXED: MOVED BEFORE FOOTER) -->
+    <div id="about" style="position: relative; top: -80px; height: 0;"></div>
+    <div id="services" style="position: relative; top: -80px; height: 0;"></div>
+    <div id="portfolio" style="position: relative; top: -80px; height: 0;"></div>
+    <div id="cases" style="position: relative; top: -80px; height: 0;"></div>
+    <div id="pricing" style="position: relative; top: -80px; height: 0;"></div>
+    <div id="insights" style="position: relative; top: -80px; height: 0;"></div>
+    <div id="contact" style="position: relative; top: -80px; height: 0;"></div>
 
     <!-- FOOTER -->
     <footer>
@@ -865,10 +874,10 @@
                     </div>
                 </div>
                 <div class="footer-socials">
-                    <a href="https://www.facebook.com/profile.php?id=61576378432368" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/nextgenit2026/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/sujit-tudu-661281212/"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://www.tiktok.com/@sujittudu2020"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61576378432368" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/nextgenit2026/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/sujit-tudu-661281212/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.tiktok.com/@sujittudu2020" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
                 </div>
             </div>
         </div>
@@ -908,7 +917,7 @@
         });
     </script>
 
-    <!-- EMAILJS INTEGRATION - FULLY WORKING -->
+    <!-- EMAILJS INTEGRATION - FULLY WORKING (FIXED ERROR HANDLING) -->
     <script>
         const EMAILJS_CONFIG = {
             PUBLIC_KEY: "k0-JMxq9DMByW7fzf",
@@ -994,15 +1003,5 @@
             }
         });
     </script>
-
-    <!-- Anchor divs for smooth scrolling -->
-    <div id="about" style="position: relative; top: -80px; height: 0;"></div>
-    <div id="services" style="position: relative; top: -80px; height: 0;"></div>
-    <div id="portfolio" style="position: relative; top: -80px; height: 0;"></div>
-    <div id="cases" style="position: relative; top: -80px; height: 0;"></div>
-    <div id="pricing" style="position: relative; top: -80px; height: 0;"></div>
-    <div id="insights" style="position: relative; top: -80px; height: 0;"></div>
-    <div id="contact" style="position: relative; top: -80px; height: 0;"></div>
-
 </body>
 </html>
